@@ -81,5 +81,5 @@ else:
     adj = "FAILED"
 
 # Final Output
-print("\nEquivalent:", eq)
-print("Adjectival Equivalent:", adj)
+print("\neq:", eq)
+print("adj:", adj)
