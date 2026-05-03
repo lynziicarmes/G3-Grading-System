@@ -3,18 +3,13 @@
 # fa (quizzes, class participation, etc.) does not have fixed components, so it can be computed as the average of all formative assessments.
 def compute_tentative():
     fa = float(input("FA (30%): "))
-
     qe = float(input("QE (20%): "))
     lt1 = float(input("LT1 (15%): "))
     lt2 = float(input("LT2 (15%): "))
     aa = float(input("AA (20%): "))
 
-    # Compute SA (already out of 70)
-    sa = (0.20 * qe) + (0.15 * lt1) + (0.15 * lt2) + (0.20 * aa)
-
-    # Tentative grade (FA 30% + SA 70%)
-    tentative = (0.30 * fa) + sa
-    return tentative
+    sa = 0.20*qe + 0.15*lt1 + 0.15*lt2 + 0.20*aa
+    return 0.30*fa + sa
 
 # Q1
 print("\nQ1")
@@ -53,7 +48,15 @@ scale = [
     (55, "2.75", "FAIR"),
     (50, "3.00", "FAIR"),
     (40, "4.00", "FAILED ON CONDITION"),
+    (0, "5.00", "FAILED")
 ]
+
+eq, adj = "5.00", "FAILED"
+
+for cut, e, a in scale:
+    if grade >= cut:
+        eq, adj = e, a
+        break
 
 # Final Output
 print("\neq:", eq)
