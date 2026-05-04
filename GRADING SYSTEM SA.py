@@ -51,8 +51,6 @@ scale = [
     (0, "5.00", "FAILED")
 ]
 
-eq, adj = "5.00", "FAILED"
-
 for cut, e, a in scale:
     if grade >= cut:
         eq, adj = e, a
